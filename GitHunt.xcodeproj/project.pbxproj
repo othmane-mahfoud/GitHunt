@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		185B719120DC4C8300FEFF5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B719020DC4C8300FEFF5A /* AppDelegate.swift */; };
-		185B719320DC4C8300FEFF5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B719220DC4C8300FEFF5A /* ViewController.swift */; };
+		185B719320DC4C8300FEFF5A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B719220DC4C8300FEFF5A /* WelcomeViewController.swift */; };
 		185B719620DC4C8300FEFF5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185B719420DC4C8300FEFF5A /* Main.storyboard */; };
 		185B719820DC4C8500FEFF5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185B719720DC4C8500FEFF5A /* Assets.xcassets */; };
 		185B719B20DC4C8500FEFF5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185B719920DC4C8500FEFF5A /* LaunchScreen.storyboard */; };
+		185B71A520DCEB6200FEFF5A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B71A420DCEB6200FEFF5A /* SignInViewController.swift */; };
+		185B71A720DCEB7200FEFF5A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B71A620DCEB7200FEFF5A /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		185B718D20DC4C8300FEFF5A /* GitHunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		185B719020DC4C8300FEFF5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		185B719220DC4C8300FEFF5A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		185B719220DC4C8300FEFF5A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		185B719520DC4C8300FEFF5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		185B719720DC4C8500FEFF5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		185B719A20DC4C8500FEFF5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		185B719C20DC4C8500FEFF5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		185B71A420DCEB6200FEFF5A /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		185B71A620DCEB7200FEFF5A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,48 @@
 		185B718F20DC4C8300FEFF5A /* GitHunt */ = {
 			isa = PBXGroup;
 			children = (
-				185B719020DC4C8300FEFF5A /* AppDelegate.swift */,
-				185B719220DC4C8300FEFF5A /* ViewController.swift */,
-				185B719420DC4C8300FEFF5A /* Main.storyboard */,
+				185B71A820DCEBAD00FEFF5A /* Model */,
+				185B71A920DCEBB300FEFF5A /* View */,
+				185B71AA20DCEBC100FEFF5A /* Controller */,
+				185B71AB20DCEBF300FEFF5A /* Supporting Files */,
 				185B719720DC4C8500FEFF5A /* Assets.xcassets */,
-				185B719920DC4C8500FEFF5A /* LaunchScreen.storyboard */,
-				185B719C20DC4C8500FEFF5A /* Info.plist */,
 			);
 			path = GitHunt;
+			sourceTree = "<group>";
+		};
+		185B71A820DCEBAD00FEFF5A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		185B71A920DCEBB300FEFF5A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				185B719920DC4C8500FEFF5A /* LaunchScreen.storyboard */,
+				185B719420DC4C8300FEFF5A /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		185B71AA20DCEBC100FEFF5A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				185B719020DC4C8300FEFF5A /* AppDelegate.swift */,
+				185B719220DC4C8300FEFF5A /* WelcomeViewController.swift */,
+				185B71A420DCEB6200FEFF5A /* SignInViewController.swift */,
+				185B71A620DCEB7200FEFF5A /* SignUpViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		185B71AB20DCEBF300FEFF5A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				185B719C20DC4C8500FEFF5A /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +173,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				185B719320DC4C8300FEFF5A /* ViewController.swift in Sources */,
+				185B719320DC4C8300FEFF5A /* WelcomeViewController.swift in Sources */,
 				185B719120DC4C8300FEFF5A /* AppDelegate.swift in Sources */,
+				185B71A720DCEB7200FEFF5A /* SignUpViewController.swift in Sources */,
+				185B71A520DCEB6200FEFF5A /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,7 +322,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89F8K9PS4Z;
-				INFOPLIST_FILE = GitHunt/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GitHunt/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,7 +340,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89F8K9PS4Z;
-				INFOPLIST_FILE = GitHunt/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GitHunt/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
