@@ -92,7 +92,7 @@
                                         <rect key="frame" x="0.0" y="40" width="250" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CrU-9e-RgV">
                                         <rect key="frame" x="0.0" y="80" width="250" height="30"/>
@@ -101,7 +101,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="4CE-Tg-SyN" kind="push" identifier="goToRepoList" id="gwC-nF-RfV"/>
+                                            <action selector="signInPressed:" destination="cjg-Xc-qaB" eventType="touchUpInside" id="gMR-PK-pT1"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dC3-vs-rEL">
@@ -111,7 +111,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="4CE-Tg-SyN" kind="push" identifier="goToRepoList" id="2VA-x0-78v"/>
+                                            <action selector="githubSignInPressed:" destination="cjg-Xc-qaB" eventType="touchUpInside" id="Y3c-k2-LZ7"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -132,6 +132,11 @@
                         <viewLayoutGuide key="safeArea" id="76z-CW-846"/>
                     </view>
                     <navigationItem key="navigationItem" id="wQB-wG-A7h"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="VOR-Lk-A7i" id="pSU-tn-hti"/>
+                        <outlet property="passwordTextField" destination="oQr-Ku-qok" id="37m-pM-PVC"/>
+                        <segue destination="4CE-Tg-SyN" kind="push" identifier="goToRepoList" id="304-Ai-5NK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LGe-Mh-Dfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,7 +166,7 @@
                                         <rect key="frame" x="0.0" y="45" width="250" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Li-tW-7nB">
                                         <rect key="frame" x="0.0" y="90" width="250" height="30"/>
@@ -170,7 +175,7 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="4CE-Tg-SyN" kind="push" identifier="goToRepoList" id="U8k-id-TZC"/>
+                                            <action selector="signUpPressed:" destination="wMQ-TE-CsG" eventType="touchUpInside" id="oSq-7i-yO8"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -192,15 +197,20 @@
                         <viewLayoutGuide key="safeArea" id="F2n-tF-vQd"/>
                     </view>
                     <navigationItem key="navigationItem" id="tgM-YF-AKi"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="p5L-gr-HU7" id="ohs-0Q-Uju"/>
+                        <outlet property="passwordTextField" destination="Usi-lx-5np" id="f1x-UU-2if"/>
+                        <segue destination="4CE-Tg-SyN" kind="push" identifier="goToRepoList" id="zjV-uB-F61"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6s-6q-Nfa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1300" y="147.97601199400302"/>
         </scene>
-        <!--View Controller-->
+        <!--Repo List View Controller-->
         <scene sceneID="T5f-4L-rlQ">
             <objects>
-                <viewController id="4CE-Tg-SyN" sceneMemberID="viewController">
+                <viewController id="4CE-Tg-SyN" customClass="RepoListViewController" customModule="GitHunt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I2h-tZ-r4w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -216,7 +226,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Ujz-jw-lPL"/>
                     </view>
-                    <navigationItem key="navigationItem" id="FlR-dL-4No"/>
+                    <navigationItem key="navigationItem" id="FlR-dL-4No">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="jZk-IY-WDZ">
+                            <connections>
+                                <action selector="logOutPressed:" destination="4CE-Tg-SyN" id="PpR-gc-jyJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFN-s4-vJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -246,6 +262,6 @@
         <image name="bg_blurr" width="640" height="1136"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="U8k-id-TZC"/>
+        <segue reference="304-Ai-5NK"/>
     </inferredMetricsTieBreakers>
 </document>

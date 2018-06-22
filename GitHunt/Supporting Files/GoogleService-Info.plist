@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>183851760262-oe8mdnog59b827gn14sv4sha6ks1ghai.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.183851760262-oe8mdnog59b827gn14sv4sha6ks1ghai</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCq73yMFlIBN_a-JAZ0R2dk_K9477SUKtc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>183851760262</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.othmane.GitHunt</string>
+	<key>PROJECT_ID</key>
+	<string>githunt-f3881</string>
+	<key>STORAGE_BUCKET</key>
+	<string>githunt-f3881.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:183851760262:ios:d3b3ce0e322777d4</string>
+	<key>DATABASE_URL</key>
+	<string>https://githunt-f3881.firebaseio.com</string>
+</dict>
+</plist>

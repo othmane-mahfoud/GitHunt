@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController {
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +24,16 @@ class SignUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func signUpPressed(_ sender: Any) {
+        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+            if error != nil {
+                print(error!)
+            }
+            else {
+                self.performSegue(withIdentifier: "goToRepoList", sender: self)
+            }
+        }
+    }
     
 }
 
