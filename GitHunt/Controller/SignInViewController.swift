@@ -29,7 +29,13 @@ class SignInViewController: UIViewController {
         
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if error != nil {
-                print(error!)
+                let alert = UIAlertController(title: "Authentication Error", message: "Your username or password are incorrect", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Try again", style: .default, handler: { (UIAlertAction) in
+                    self.emailTextField.text = ""
+                    self.passwordTextField.text = ""
+                })
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
             }
             else{
                 self.performSegue(withIdentifier: "goToRepoList", sender: self)
@@ -40,13 +46,6 @@ class SignInViewController: UIViewController {
     
     @IBAction func githubSignInPressed(_ sender: Any) {
         
-        let credential = GitHubAuthProvider.credential(withToken: "08da975f3c7a2062f856fadce42861de364dc5ca")
-        Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
-            if error != nil {
-                print(error!)
-            }
-            print("GitHub sign in successful")
-        }
         
     }
     
