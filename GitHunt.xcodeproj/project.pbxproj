@@ -15,6 +15,7 @@
 		185B71A520DCEB6200FEFF5A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B71A420DCEB6200FEFF5A /* SignInViewController.swift */; };
 		185B71A720DCEB7200FEFF5A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B71A620DCEB7200FEFF5A /* SignUpViewController.swift */; };
 		185B71AD20DD026500FEFF5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 185B71AC20DD026500FEFF5A /* GoogleService-Info.plist */; };
+		187A926420E253E200D673E7 /* RepoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187A926320E253E200D673E7 /* RepoService.swift */; };
 		189FC0CB20DD249A00572A37 /* RepoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189FC0CA20DD249A00572A37 /* RepoListViewController.swift */; };
 		8EF5D33945C5F741B23C10C3 /* Pods_GitHunt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FB4384C15B5EA7A1818A98F /* Pods_GitHunt.framework */; };
 /* End PBXBuildFile section */
@@ -30,6 +31,7 @@
 		185B71A420DCEB6200FEFF5A /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		185B71A620DCEB7200FEFF5A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		185B71AC20DD026500FEFF5A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		187A926320E253E200D673E7 /* RepoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoService.swift; sourceTree = "<group>"; };
 		189FC0CA20DD249A00572A37 /* RepoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewController.swift; sourceTree = "<group>"; };
 		189FC0CC20DD432400572A37 /* GitHunt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GitHunt.entitlements; sourceTree = "<group>"; };
 		2923B626644A8CE014A1FF38 /* Pods-GitHunt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHunt.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHunt/Pods-GitHunt.release.xcconfig"; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		185B71A820DCEBAD00FEFF5A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				187A926320E253E200D673E7 /* RepoService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -216,19 +219,27 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GitHunt/Pods-GitHunt-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -265,6 +276,7 @@
 				185B719320DC4C8300FEFF5A /* WelcomeViewController.swift in Sources */,
 				185B719120DC4C8300FEFF5A /* AppDelegate.swift in Sources */,
 				189FC0CB20DD249A00572A37 /* RepoListViewController.swift in Sources */,
+				187A926420E253E200D673E7 /* RepoService.swift in Sources */,
 				185B71A720DCEB7200FEFF5A /* SignUpViewController.swift in Sources */,
 				185B71A520DCEB6200FEFF5A /* SignInViewController.swift in Sources */,
 			);

@@ -8,12 +8,14 @@
 
 import UIKit
 import Firebase
+import Moya
 
 class RepoListViewController: UIViewController {
     
+    let provider = MoyaProvider<RepoService>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,4 +32,6 @@ class RepoListViewController: UIViewController {
             print("There was an error signing out")
         }
     }
+    
+    
 }
