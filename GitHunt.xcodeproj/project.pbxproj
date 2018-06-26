@@ -16,6 +16,9 @@
 		185B71A720DCEB7200FEFF5A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B71A620DCEB7200FEFF5A /* SignUpViewController.swift */; };
 		185B71AD20DD026500FEFF5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 185B71AC20DD026500FEFF5A /* GoogleService-Info.plist */; };
 		187A926420E253E200D673E7 /* RepoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187A926320E253E200D673E7 /* RepoService.swift */; };
+		187A926B20E29AC500D673E7 /* RepoCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187A926920E29AC500D673E7 /* RepoCustomCell.xib */; };
+		187A926C20E29AC500D673E7 /* RepoCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187A926A20E29AC500D673E7 /* RepoCustomCell.swift */; };
+		187A926E20E29DA100D673E7 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187A926D20E29DA100D673E7 /* Repo.swift */; };
 		189FC0CB20DD249A00572A37 /* RepoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189FC0CA20DD249A00572A37 /* RepoListViewController.swift */; };
 		8EF5D33945C5F741B23C10C3 /* Pods_GitHunt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FB4384C15B5EA7A1818A98F /* Pods_GitHunt.framework */; };
 /* End PBXBuildFile section */
@@ -32,6 +35,9 @@
 		185B71A620DCEB7200FEFF5A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		185B71AC20DD026500FEFF5A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		187A926320E253E200D673E7 /* RepoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoService.swift; sourceTree = "<group>"; };
+		187A926920E29AC500D673E7 /* RepoCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepoCustomCell.xib; sourceTree = "<group>"; };
+		187A926A20E29AC500D673E7 /* RepoCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoCustomCell.swift; sourceTree = "<group>"; };
+		187A926D20E29DA100D673E7 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		189FC0CA20DD249A00572A37 /* RepoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewController.swift; sourceTree = "<group>"; };
 		189FC0CC20DD432400572A37 /* GitHunt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GitHunt.entitlements; sourceTree = "<group>"; };
 		2923B626644A8CE014A1FF38 /* Pods-GitHunt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHunt.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHunt/Pods-GitHunt.release.xcconfig"; sourceTree = "<group>"; };
@@ -86,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				187A926320E253E200D673E7 /* RepoService.swift */,
+				187A926D20E29DA100D673E7 /* Repo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -93,6 +100,7 @@
 		185B71A920DCEBB300FEFF5A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				187A926720E298EF00D673E7 /* Custom UI */,
 				185B719920DC4C8500FEFF5A /* LaunchScreen.storyboard */,
 				185B719420DC4C8300FEFF5A /* Main.storyboard */,
 			);
@@ -118,6 +126,23 @@
 				185B71AC20DD026500FEFF5A /* GoogleService-Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		187A926720E298EF00D673E7 /* Custom UI */ = {
+			isa = PBXGroup;
+			children = (
+				187A926820E2990C00D673E7 /* Custom Cell */,
+			);
+			path = "Custom UI";
+			sourceTree = "<group>";
+		};
+		187A926820E2990C00D673E7 /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				187A926A20E29AC500D673E7 /* RepoCustomCell.swift */,
+				187A926920E29AC500D673E7 /* RepoCustomCell.xib */,
+			);
+			path = "Custom Cell";
 			sourceTree = "<group>";
 		};
 		9F55253B5F37EB8577ACBD05 /* Frameworks */ = {
@@ -204,6 +229,7 @@
 			files = (
 				185B719B20DC4C8500FEFF5A /* LaunchScreen.storyboard in Resources */,
 				185B71AD20DD026500FEFF5A /* GoogleService-Info.plist in Resources */,
+				187A926B20E29AC500D673E7 /* RepoCustomCell.xib in Resources */,
 				185B719820DC4C8500FEFF5A /* Assets.xcassets in Resources */,
 				185B719620DC4C8300FEFF5A /* Main.storyboard in Resources */,
 			);
@@ -276,6 +302,8 @@
 				185B719320DC4C8300FEFF5A /* WelcomeViewController.swift in Sources */,
 				185B719120DC4C8300FEFF5A /* AppDelegate.swift in Sources */,
 				189FC0CB20DD249A00572A37 /* RepoListViewController.swift in Sources */,
+				187A926E20E29DA100D673E7 /* Repo.swift in Sources */,
+				187A926C20E29AC500D673E7 /* RepoCustomCell.swift in Sources */,
 				187A926420E253E200D673E7 /* RepoService.swift in Sources */,
 				185B71A720DCEB7200FEFF5A /* SignUpViewController.swift in Sources */,
 				185B71A520DCEB6200FEFF5A /* SignInViewController.swift in Sources */,
