@@ -15,12 +15,14 @@ class Repo {
     var repoOwner : String
     var repoOwnerAvatar : String
     var repoStars : Float
-    init(name : String, description : String, owner : String, ownerAvatar : String, stars : Float) {
+    var repoURL : String
+    init(name : String, description : String, owner : String, ownerAvatar : String, stars : Float, url: String) {
         repoName = name
         repoDescription = description
         repoOwner = owner
         repoOwnerAvatar = ownerAvatar
         repoStars = stars
+        repoURL = url
     }
     
 }

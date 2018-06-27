@@ -70,6 +70,10 @@ class RepoListViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let repoWebpage = URL(string: allRepos[indexPath.row].repoURL)
+        UIApplication.shared.open(repoWebpage!, options: [:])
+    }
     //Configure the Table View cells to have an optimal height
     
     func configureTableView() {
@@ -106,7 +110,8 @@ class RepoListViewController: UIViewController, UITableViewDelegate, UITableView
                 let repoOwner = json["items"][index]["owner"]["login"].string
                 let repoOwnerAvatar = json["items"][index]["owner"]["avatar_url"].string
                 let repoStars = json["items"][index]["stargazers_count"].float
-                let newRepo = Repo(name: repoName, description: repoDescription, owner: repoOwner!, ownerAvatar: repoOwnerAvatar!, stars: repoStars!)
+                let repoURL = json["items"][index]["html_url"].string
+                let newRepo = Repo(name: repoName, description: repoDescription, owner: repoOwner!, ownerAvatar: repoOwnerAvatar!, stars: repoStars!, url: repoURL!)
                 self.allRepos.append(newRepo)
                 
                 self.configureTableView()

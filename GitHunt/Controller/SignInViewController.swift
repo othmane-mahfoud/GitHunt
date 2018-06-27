@@ -46,6 +46,7 @@ class SignInViewController: UIViewController {
     
     @IBAction func githubSignInPressed(_ sender: Any) {
         
+        self.performSegue(withIdentifier: "goToRepoList", sender: self)
         
     }
     
