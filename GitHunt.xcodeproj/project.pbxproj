@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		184AA23D20E4D975007276EE /* BookmarkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184AA23C20E4D975007276EE /* BookmarkListViewController.swift */; };
+		184AA24020E4E8AD007276EE /* BookmarksCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184AA23E20E4E8AD007276EE /* BookmarksCustomCell.swift */; };
+		184AA24120E4E8AD007276EE /* BookmarksCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184AA23F20E4E8AD007276EE /* BookmarksCustomCell.xib */; };
 		185B719120DC4C8300FEFF5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B719020DC4C8300FEFF5A /* AppDelegate.swift */; };
 		185B719320DC4C8300FEFF5A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B719220DC4C8300FEFF5A /* WelcomeViewController.swift */; };
 		185B719620DC4C8300FEFF5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185B719420DC4C8300FEFF5A /* Main.storyboard */; };
@@ -24,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		184AA23C20E4D975007276EE /* BookmarkListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkListViewController.swift; sourceTree = "<group>"; };
+		184AA23E20E4E8AD007276EE /* BookmarksCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksCustomCell.swift; sourceTree = "<group>"; };
+		184AA23F20E4E8AD007276EE /* BookmarksCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookmarksCustomCell.xib; sourceTree = "<group>"; };
 		185B718D20DC4C8300FEFF5A /* GitHunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		185B719020DC4C8300FEFF5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		185B719220DC4C8300FEFF5A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +121,7 @@
 				185B71A420DCEB6200FEFF5A /* SignInViewController.swift */,
 				185B71A620DCEB7200FEFF5A /* SignUpViewController.swift */,
 				189FC0CA20DD249A00572A37 /* RepoListViewController.swift */,
+				184AA23C20E4D975007276EE /* BookmarkListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -141,6 +148,8 @@
 			children = (
 				187A926A20E29AC500D673E7 /* RepoCustomCell.swift */,
 				187A926920E29AC500D673E7 /* RepoCustomCell.xib */,
+				184AA23E20E4E8AD007276EE /* BookmarksCustomCell.swift */,
+				184AA23F20E4E8AD007276EE /* BookmarksCustomCell.xib */,
 			);
 			path = "Custom Cell";
 			sourceTree = "<group>";
@@ -227,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				184AA24120E4E8AD007276EE /* BookmarksCustomCell.xib in Resources */,
 				185B719B20DC4C8500FEFF5A /* LaunchScreen.storyboard in Resources */,
 				185B71AD20DD026500FEFF5A /* GoogleService-Info.plist in Resources */,
 				187A926B20E29AC500D673E7 /* RepoCustomCell.xib in Resources */,
@@ -299,9 +309,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				184AA24020E4E8AD007276EE /* BookmarksCustomCell.swift in Sources */,
 				185B719320DC4C8300FEFF5A /* WelcomeViewController.swift in Sources */,
 				185B719120DC4C8300FEFF5A /* AppDelegate.swift in Sources */,
 				189FC0CB20DD249A00572A37 /* RepoListViewController.swift in Sources */,
+				184AA23D20E4D975007276EE /* BookmarkListViewController.swift in Sources */,
 				187A926E20E29DA100D673E7 /* Repo.swift in Sources */,
 				187A926C20E29AC500D673E7 /* RepoCustomCell.swift in Sources */,
 				187A926420E253E200D673E7 /* RepoService.swift in Sources */,

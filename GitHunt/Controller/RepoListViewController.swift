@@ -60,6 +60,30 @@ class RepoListViewController: UIViewController, UITableViewDelegate, UITableView
         cell.repoStarsLabel.text = formatStarsNumber(starNumber: allRepos[indexPath.row].repoStars)
         cell.repoOwnerAvatarImageView.image = convertUrlToImage(imageUrl: allRepos[indexPath.row].repoOwnerAvatar)
         
+        cell.didClickPlusBtn = { cell in
+            print(indexPath)
+        }
+        cell.didClickBookmark = { cell in
+            let bookmarkDB = Database.database().reference().child("bookmarks")
+            let selectedRepo : Repo = self.allRepos[indexPath.row]
+            let bookmarkDictionary = ["user": Auth.auth().currentUser?.email as Any,
+                                      "name": selectedRepo.repoName,
+                                      "description": selectedRepo.repoDescription,
+                                      "owner": selectedRepo.repoOwner,
+                                      "stars": selectedRepo.repoStars as Float,
+                                      "avatar": selectedRepo.repoOwnerAvatar,
+                                      "url": selectedRepo.repoURL] as [String : Any]
+            bookmarkDB.childByAutoId().setValue(bookmarkDictionary){
+                (error, reference) in
+                if error != nil {
+                    print(error!)
+                }
+                else {
+                    print("Bookmark saved successfully")
+                }
+            }
+        }
+        
         return cell
         
     }

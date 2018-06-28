@@ -17,7 +17,9 @@ class RepoCustomCell: UITableViewCell {
     @IBOutlet weak var repoOwnerAvatarImageView: UIImageView!
     @IBOutlet weak var bookMarkButton: UIButton!
     @IBOutlet weak var addToCollectionButton: UIButton!
-    @IBOutlet weak var viewOnWebButton: UIButton!
+    
+    var didClickPlusBtn : ((RepoCustomCell) -> Void)?
+    var didClickBookmark : ((RepoCustomCell) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,6 +35,7 @@ class RepoCustomCell: UITableViewCell {
     @IBAction func bookMarkPressed(_ sender: Any) {
         if bookMarkButton.currentImage == UIImage(named: "bookmark.png"){
             bookMarkButton.setImage(UIImage(named: "bookmark-2.png"), for: UIControlState.normal)
+            didClickBookmark?(self)
         }
         else {
             bookMarkButton.setImage(UIImage(named: "bookmark.png"), for: UIControlState.normal)
@@ -47,16 +50,7 @@ class RepoCustomCell: UITableViewCell {
                        animations: {self.addToCollectionButton.transform = CGAffineTransform.identity},
                        completion: { Void in()  }
         )
-    }
-    
-    @IBAction func viewOnWebPressed(_ sender: Any) {
-        viewOnWebButton.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
-        UIView.animate(withDuration: 0.5,
-                       delay: 0,
-                       options: UIViewAnimationOptions.allowUserInteraction,
-                       animations: {self.viewOnWebButton.transform = CGAffineTransform.identity},
-                       completion: { Void in()  }
-        )
+        didClickPlusBtn?(self)
     }
     
 }
