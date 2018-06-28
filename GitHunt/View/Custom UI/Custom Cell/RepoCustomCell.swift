@@ -33,13 +33,7 @@ class RepoCustomCell: UITableViewCell {
     }
     
     @IBAction func bookMarkPressed(_ sender: Any) {
-        if bookMarkButton.currentImage == UIImage(named: "bookmark.png"){
-            bookMarkButton.setImage(UIImage(named: "bookmark-2.png"), for: UIControlState.normal)
-            didClickBookmark?(self)
-        }
-        else {
-            bookMarkButton.setImage(UIImage(named: "bookmark.png"), for: UIControlState.normal)
-        }
+        didClickBookmark?(self)
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {

@@ -16,6 +16,7 @@ class Repo {
     var repoOwnerAvatar : String
     var repoStars : Float
     var repoURL : String
+    var isBookmarked : Bool = false
     init(name : String, description : String, owner : String, ownerAvatar : String, stars : Float, url: String) {
         repoName = name
         repoDescription = description

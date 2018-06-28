@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class BookmarksCustomCell: UITableViewCell {
 
     @IBOutlet weak var repoNameLabel: UILabel!
@@ -26,6 +27,10 @@ class BookmarksCustomCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func removeButtonPressed(_ sender: Any) {
+        
     }
     
 }

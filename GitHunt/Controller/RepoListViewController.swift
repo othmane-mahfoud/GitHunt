@@ -60,28 +60,42 @@ class RepoListViewController: UIViewController, UITableViewDelegate, UITableView
         cell.repoStarsLabel.text = formatStarsNumber(starNumber: allRepos[indexPath.row].repoStars)
         cell.repoOwnerAvatarImageView.image = convertUrlToImage(imageUrl: allRepos[indexPath.row].repoOwnerAvatar)
         
-        cell.didClickPlusBtn = { cell in
-            print(indexPath)
-        }
         cell.didClickBookmark = { cell in
             let bookmarkDB = Database.database().reference().child("bookmarks")
-            let selectedRepo : Repo = self.allRepos[indexPath.row]
-            let bookmarkDictionary = ["user": Auth.auth().currentUser?.email as Any,
-                                      "name": selectedRepo.repoName,
-                                      "description": selectedRepo.repoDescription,
-                                      "owner": selectedRepo.repoOwner,
-                                      "stars": selectedRepo.repoStars as Float,
-                                      "avatar": selectedRepo.repoOwnerAvatar,
-                                      "url": selectedRepo.repoURL] as [String : Any]
-            bookmarkDB.childByAutoId().setValue(bookmarkDictionary){
-                (error, reference) in
-                if error != nil {
-                    print(error!)
-                }
-                else {
-                    print("Bookmark saved successfully")
+            
+            self.allRepos[indexPath.row].isBookmarked = !self.allRepos[indexPath.row].isBookmarked
+            
+            if self.allRepos[indexPath.row].isBookmarked == true {
+                cell.bookMarkButton.setImage(UIImage(named: "bookmark-2.png"), for: UIControlState.normal)
+                let selectedRepo : Repo = self.allRepos[indexPath.row]
+                let bookmarkDictionary = ["user": Auth.auth().currentUser?.email as Any,
+                                          "name": selectedRepo.repoName,
+                                          "description": selectedRepo.repoDescription,
+                                          "owner": selectedRepo.repoOwner,
+                                          "stars": selectedRepo.repoStars as Float,
+                                          "avatar": selectedRepo.repoOwnerAvatar,
+                                          "url": selectedRepo.repoURL,
+                                          "isBookmarked": selectedRepo.isBookmarked as Bool] as [String : Any]
+                bookmarkDB.childByAutoId().setValue(bookmarkDictionary){
+                    (error, reference) in
+                    if error != nil {
+                        print(error!)
+                    }
+                    else {
+                        print("Bookmark saved successfully")
+                    }
                 }
             }
+            else {
+                cell.bookMarkButton.setImage(UIImage(named: "bookmark.png"), for: UIControlState.normal)
+                //TODO: - Implement Unsaving
+            }
+            self.repoListTableView.reloadData()
+            self.configureTableView()
+        }
+        
+        cell.didClickPlusBtn = { cell in
+            print(indexPath)
         }
         
         return cell
