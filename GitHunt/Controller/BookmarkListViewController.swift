@@ -18,6 +18,9 @@ class BookmarkListViewController : UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.isNavigationBarHidden = true
+        
         bookmarkTableView.delegate = self
         bookmarkTableView.dataSource = self
         bookmarkTableView.register(UINib(nibName: "BookmarksCustomCell", bundle: nil), forCellReuseIdentifier: "bookmarkCell")
@@ -77,7 +80,7 @@ class BookmarkListViewController : UIViewController, UITableViewDelegate, UITabl
         
     }
     
-    //MARK: -Database
+    //MARK: - Database
     
     func retrieveBookmarks() {
         let messageDB = Database.database().reference().child("bookmarks")
@@ -95,6 +98,18 @@ class BookmarkListViewController : UIViewController, UITableViewDelegate, UITabl
             self.bookmarkKeys.append(key)
             self.configureTableView()
             self.bookmarkTableView.reloadData()
+        }
+    }
+    
+    //MARK: - Log Out
+    
+    @IBAction func logOutPressed(_ sender: Any) {
+        do{
+            try Auth.auth().signOut()
+            navigationController?.popToRootViewController(animated: true)
+        }
+        catch {
+            print("There was an error signing out")
         }
     }
     

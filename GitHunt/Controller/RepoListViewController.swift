@@ -24,6 +24,8 @@ class RepoListViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.isNavigationBarHidden = true
+        
         repoListTableView.delegate = self
         repoListTableView.dataSource = self
         repoListTableView.register(UINib(nibName: "RepoCustomCell", bundle: nil), forCellReuseIdentifier: "repoCustomCell")
@@ -37,16 +39,6 @@ class RepoListViewController: UIViewController, UITableViewDelegate, UITableView
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func logOutPressed(_ sender: Any) {
-        do{
-            try Auth.auth().signOut()
-            navigationController?.popToRootViewController(animated: true)
-        }
-        catch {
-            print("There was an error signing out")
-        }
     }
     
     //MARK: - TableView DataSource Methods
@@ -155,6 +147,18 @@ class RepoListViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
         
+    }
+    
+    //MARK: - Log Out
+    
+    @IBAction func logOutPressed(_ sender: Any) {
+        do{
+            try Auth.auth().signOut()
+            navigationController?.popToRootViewController(animated: true)
+        }
+        catch {
+            print("There was an error signing out")
+        }
     }
     
     //MARK: - Helper Functions
