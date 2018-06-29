@@ -12,6 +12,7 @@ import Firebase
 class BookmarkListViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var bookmarkArray : [Repo] = [Repo]()
+    var bookmarkKeys : [String] = [String]()
     
     @IBOutlet weak var bookmarkTableView: UITableView!
     
@@ -40,6 +41,17 @@ class BookmarkListViewController : UIViewController, UITableViewDelegate, UITabl
         cell.repoDescriptionLabel.text = bookmarkArray[indexPath.row].repoDescription
         cell.repoOwnerLabel.text = bookmarkArray[indexPath.row].repoOwner
         cell.repoOwnerAvatar.image = convertUrlToImage(imageUrl: bookmarkArray[indexPath.row].repoOwnerAvatar)
+        
+        cell.didClickRemoveBtn = { cell in
+            let selectedRepo = self.bookmarkArray[indexPath.row]
+            selectedRepo.isBookmarked = false
+
+            Database.database().reference().child("bookmarks").child(self.bookmarkKeys[indexPath.row]).removeValue()
+            print(self.bookmarkKeys[indexPath.row])
+            self.bookmarkArray.remove(at: indexPath.row)
+            self.bookmarkKeys.remove(at: indexPath.row)
+            self.bookmarkTableView.reloadData()
+        }
         
         return cell
         
@@ -79,6 +91,8 @@ class BookmarkListViewController : UIViewController, UITableViewDelegate, UITabl
             let repoURL = snapshotValue["url"]
             let bookMark = Repo(name: repoName as! String, description: repoDescription as! String, owner: repoOwner! as! String, ownerAvatar: ownerAvatar! as! String, stars: repoStars as! Float , url: repoURL! as! String)
             self.bookmarkArray.append(bookMark)
+            let key = snapshot.key
+            self.bookmarkKeys.append(key)
             self.configureTableView()
             self.bookmarkTableView.reloadData()
         }

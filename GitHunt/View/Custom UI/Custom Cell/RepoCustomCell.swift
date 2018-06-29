@@ -33,7 +33,16 @@ class RepoCustomCell: UITableViewCell {
     }
     
     @IBAction func bookMarkPressed(_ sender: Any) {
-        didClickBookmark?(self)
+        bookMarkButton.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       options: UIViewAnimationOptions.allowUserInteraction,
+                       animations: {self.bookMarkButton.transform = CGAffineTransform.identity},
+                       completion: { Void in()  }
+        )
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+            self.didClickBookmark?(self)
+        }
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
@@ -44,7 +53,9 @@ class RepoCustomCell: UITableViewCell {
                        animations: {self.addToCollectionButton.transform = CGAffineTransform.identity},
                        completion: { Void in()  }
         )
-        didClickPlusBtn?(self)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+            self.didClickPlusBtn?(self)
+        }
     }
     
 }

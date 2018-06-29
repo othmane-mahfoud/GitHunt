@@ -18,6 +18,9 @@ class BookmarksCustomCell: UITableViewCell {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     
+    //Closures
+    var didClickRemoveBtn : ((BookmarksCustomCell) -> Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -30,7 +33,16 @@ class BookmarksCustomCell: UITableViewCell {
     }
     
     @IBAction func removeButtonPressed(_ sender: Any) {
-        
+        deleteButton.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       options: UIViewAnimationOptions.allowUserInteraction,
+                       animations: {self.deleteButton.transform = CGAffineTransform.identity},
+                       completion: { Void in()  }
+        )
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+            self.didClickRemoveBtn?(self)
+        }
     }
     
 }

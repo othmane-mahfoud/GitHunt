@@ -17,6 +17,7 @@ class RepoListViewController: UIViewController, UITableViewDelegate, UITableView
     var allRepos : [Repo] = [Repo]()
     
     @IBOutlet weak var repoListTableView: UITableView!
+    var bookmarkKeys : [String] = [String]()
     
     let provider = MoyaProvider<RepoService>()
     
@@ -63,33 +64,27 @@ class RepoListViewController: UIViewController, UITableViewDelegate, UITableView
         cell.didClickBookmark = { cell in
             let bookmarkDB = Database.database().reference().child("bookmarks")
             
-            self.allRepos[indexPath.row].isBookmarked = !self.allRepos[indexPath.row].isBookmarked
-            
-            if self.allRepos[indexPath.row].isBookmarked == true {
-                cell.bookMarkButton.setImage(UIImage(named: "bookmark-2.png"), for: UIControlState.normal)
-                let selectedRepo : Repo = self.allRepos[indexPath.row]
-                let bookmarkDictionary = ["user": Auth.auth().currentUser?.email as Any,
-                                          "name": selectedRepo.repoName,
-                                          "description": selectedRepo.repoDescription,
-                                          "owner": selectedRepo.repoOwner,
-                                          "stars": selectedRepo.repoStars as Float,
-                                          "avatar": selectedRepo.repoOwnerAvatar,
-                                          "url": selectedRepo.repoURL,
-                                          "isBookmarked": selectedRepo.isBookmarked as Bool] as [String : Any]
-                bookmarkDB.childByAutoId().setValue(bookmarkDictionary){
-                    (error, reference) in
-                    if error != nil {
-                        print(error!)
-                    }
-                    else {
-                        print("Bookmark saved successfully")
-                    }
+            self.allRepos[indexPath.row].isBookmarked = true
+            cell.bookMarkButton.setImage(UIImage(named: "bookmark-2.png"), for: UIControlState.normal)
+            let selectedRepo : Repo = self.allRepos[indexPath.row]
+            let bookmarkDictionary = ["user": Auth.auth().currentUser?.email as Any,
+                                      "name": selectedRepo.repoName,
+                                      "description": selectedRepo.repoDescription,
+                                      "owner": selectedRepo.repoOwner,
+                                      "stars": selectedRepo.repoStars as Float,
+                                      "avatar": selectedRepo.repoOwnerAvatar,
+                                      "url": selectedRepo.repoURL,
+                                      "isBookmarked": selectedRepo.isBookmarked as Bool] as [String : Any]
+            bookmarkDB.childByAutoId().setValue(bookmarkDictionary){
+                (error, reference) in
+                if error != nil {
+                    print(error!)
+                }
+                else {
+                    print("bookmark saved successfully")
                 }
             }
-            else {
-                cell.bookMarkButton.setImage(UIImage(named: "bookmark.png"), for: UIControlState.normal)
-                //TODO: - Implement Unsaving
-            }
+            
             self.repoListTableView.reloadData()
             self.configureTableView()
         }
