@@ -82,7 +82,25 @@ class RepoListViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         cell.didClickPlusBtn = { cell in
-            print(indexPath)
+            self.performSegue(withIdentifier: "selectCollection", sender: self)
+//            let reposDB = Database.database().reference().child("collections").child("repos")
+//            let selectedRepo : Repo = self.allRepos[indexPath.row]
+//            let repoDictionary = ["user": Auth.auth().currentUser?.email as Any,
+//                                  "name": selectedRepo.repoName,
+//                                  "description": selectedRepo.repoDescription,
+//                                  "owner": selectedRepo.repoOwner,
+//                                  "stars": selectedRepo.repoStars as Float,
+//                                  "avatar": selectedRepo.repoOwnerAvatar,
+//                                  "url": selectedRepo.repoURL]
+//            reposDB.childByAutoId().setValue(repoDictionary) {
+//                (error, reference) in
+//                if error != nil {
+//                    print(error!)
+//                }
+//                else {
+//                    print("repo saved successfully")
+//                }
+//            }
         }
         
         return cell
@@ -99,6 +117,7 @@ class RepoListViewController: UIViewController, UITableViewDelegate, UITableView
         let repoWebpage = URL(string: allRepos[indexPath.row].repoURL)
         UIApplication.shared.open(repoWebpage!, options: [:])
     }
+    
     //Configure the Table View cells to have an optimal height
     
     func configureTableView() {

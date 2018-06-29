@@ -35,8 +35,6 @@ class CollectionsViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "collectionCell", for: indexPath) as! CollectionCustomCell
-        let borderColor : UIColor = .black
-        cell.layer.borderColor = borderColor.cgColor
         cell.collectionNameLabel.text = collectionArray[indexPath.row].collectionName
         return cell
         
@@ -48,9 +46,6 @@ class CollectionsViewController: UIViewController, UITableViewDelegate, UITableV
         
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
     
     //Configure the Table View cells to have an optimal height
     

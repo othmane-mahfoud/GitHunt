@@ -18,6 +18,7 @@
 		185B71A520DCEB6200FEFF5A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B71A420DCEB6200FEFF5A /* SignInViewController.swift */; };
 		185B71A720DCEB7200FEFF5A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B71A620DCEB7200FEFF5A /* SignUpViewController.swift */; };
 		185B71AD20DD026500FEFF5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 185B71AC20DD026500FEFF5A /* GoogleService-Info.plist */; };
+		185BCC3F20E695C80039AE85 /* SelectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185BCC3E20E695C80039AE85 /* SelectCollectionViewController.swift */; };
 		186AA66A20E63BAC0009C64E /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186AA66920E63BAC0009C64E /* CollectionsViewController.swift */; };
 		186AA66E20E63DB10009C64E /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186AA66D20E63DB10009C64E /* Collection.swift */; };
 		186AA67120E64DE50009C64E /* CollectionCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186AA66F20E64DE50009C64E /* CollectionCustomCell.swift */; };
@@ -44,6 +45,7 @@
 		185B71A420DCEB6200FEFF5A /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		185B71A620DCEB7200FEFF5A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		185B71AC20DD026500FEFF5A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		185BCC3E20E695C80039AE85 /* SelectCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollectionViewController.swift; sourceTree = "<group>"; };
 		186AA66920E63BAC0009C64E /* CollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
 		186AA66D20E63DB10009C64E /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		186AA66F20E64DE50009C64E /* CollectionCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCustomCell.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				189FC0CA20DD249A00572A37 /* RepoListViewController.swift */,
 				184AA23C20E4D975007276EE /* BookmarkListViewController.swift */,
 				186AA66920E63BAC0009C64E /* CollectionsViewController.swift */,
+				185BCC3E20E695C80039AE85 /* SelectCollectionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185BCC3F20E695C80039AE85 /* SelectCollectionViewController.swift in Sources */,
 				184AA24020E4E8AD007276EE /* BookmarksCustomCell.swift in Sources */,
 				185B719320DC4C8300FEFF5A /* WelcomeViewController.swift in Sources */,
 				185B719120DC4C8300FEFF5A /* AppDelegate.swift in Sources */,
