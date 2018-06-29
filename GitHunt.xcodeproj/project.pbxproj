@@ -18,6 +18,10 @@
 		185B71A520DCEB6200FEFF5A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B71A420DCEB6200FEFF5A /* SignInViewController.swift */; };
 		185B71A720DCEB7200FEFF5A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B71A620DCEB7200FEFF5A /* SignUpViewController.swift */; };
 		185B71AD20DD026500FEFF5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 185B71AC20DD026500FEFF5A /* GoogleService-Info.plist */; };
+		186AA66A20E63BAC0009C64E /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186AA66920E63BAC0009C64E /* CollectionsViewController.swift */; };
+		186AA66E20E63DB10009C64E /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186AA66D20E63DB10009C64E /* Collection.swift */; };
+		186AA67120E64DE50009C64E /* CollectionCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186AA66F20E64DE50009C64E /* CollectionCustomCell.swift */; };
+		186AA67220E64DE50009C64E /* CollectionCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186AA67020E64DE50009C64E /* CollectionCustomCell.xib */; };
 		187A926420E253E200D673E7 /* RepoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187A926320E253E200D673E7 /* RepoService.swift */; };
 		187A926B20E29AC500D673E7 /* RepoCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187A926920E29AC500D673E7 /* RepoCustomCell.xib */; };
 		187A926C20E29AC500D673E7 /* RepoCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187A926A20E29AC500D673E7 /* RepoCustomCell.swift */; };
@@ -40,6 +44,10 @@
 		185B71A420DCEB6200FEFF5A /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		185B71A620DCEB7200FEFF5A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		185B71AC20DD026500FEFF5A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		186AA66920E63BAC0009C64E /* CollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
+		186AA66D20E63DB10009C64E /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		186AA66F20E64DE50009C64E /* CollectionCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCustomCell.swift; sourceTree = "<group>"; };
+		186AA67020E64DE50009C64E /* CollectionCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionCustomCell.xib; sourceTree = "<group>"; };
 		187A926320E253E200D673E7 /* RepoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoService.swift; sourceTree = "<group>"; };
 		187A926920E29AC500D673E7 /* RepoCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepoCustomCell.xib; sourceTree = "<group>"; };
 		187A926A20E29AC500D673E7 /* RepoCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoCustomCell.swift; sourceTree = "<group>"; };
@@ -99,6 +107,7 @@
 			children = (
 				187A926320E253E200D673E7 /* RepoService.swift */,
 				187A926D20E29DA100D673E7 /* Repo.swift */,
+				186AA66D20E63DB10009C64E /* Collection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -122,6 +131,7 @@
 				185B71A620DCEB7200FEFF5A /* SignUpViewController.swift */,
 				189FC0CA20DD249A00572A37 /* RepoListViewController.swift */,
 				184AA23C20E4D975007276EE /* BookmarkListViewController.swift */,
+				186AA66920E63BAC0009C64E /* CollectionsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -150,6 +160,8 @@
 				187A926920E29AC500D673E7 /* RepoCustomCell.xib */,
 				184AA23E20E4E8AD007276EE /* BookmarksCustomCell.swift */,
 				184AA23F20E4E8AD007276EE /* BookmarksCustomCell.xib */,
+				186AA66F20E64DE50009C64E /* CollectionCustomCell.swift */,
+				186AA67020E64DE50009C64E /* CollectionCustomCell.xib */,
 			);
 			path = "Custom Cell";
 			sourceTree = "<group>";
@@ -241,6 +253,7 @@
 				185B71AD20DD026500FEFF5A /* GoogleService-Info.plist in Resources */,
 				187A926B20E29AC500D673E7 /* RepoCustomCell.xib in Resources */,
 				185B719820DC4C8500FEFF5A /* Assets.xcassets in Resources */,
+				186AA67220E64DE50009C64E /* CollectionCustomCell.xib in Resources */,
 				185B719620DC4C8300FEFF5A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,11 +325,14 @@
 				184AA24020E4E8AD007276EE /* BookmarksCustomCell.swift in Sources */,
 				185B719320DC4C8300FEFF5A /* WelcomeViewController.swift in Sources */,
 				185B719120DC4C8300FEFF5A /* AppDelegate.swift in Sources */,
+				186AA66E20E63DB10009C64E /* Collection.swift in Sources */,
+				186AA67120E64DE50009C64E /* CollectionCustomCell.swift in Sources */,
 				189FC0CB20DD249A00572A37 /* RepoListViewController.swift in Sources */,
 				184AA23D20E4D975007276EE /* BookmarkListViewController.swift in Sources */,
 				187A926E20E29DA100D673E7 /* Repo.swift in Sources */,
 				187A926C20E29AC500D673E7 /* RepoCustomCell.swift in Sources */,
 				187A926420E253E200D673E7 /* RepoService.swift in Sources */,
+				186AA66A20E63BAC0009C64E /* CollectionsViewController.swift in Sources */,
 				185B71A720DCEB7200FEFF5A /* SignUpViewController.swift in Sources */,
 				185B71A520DCEB6200FEFF5A /* SignInViewController.swift in Sources */,
 			);
