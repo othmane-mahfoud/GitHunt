@@ -63,6 +63,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="GitHunt" id="nGd-hF-CJ2"/>
+                    <connections>
+                        <segue destination="BZS-MV-hij" kind="show" identifier="stayLoggedIn" id="xWP-5B-82K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -205,7 +208,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6s-6q-Nfa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3178.4000000000001" y="147.97601199400302"/>
+            <point key="canvasLocation" x="3186" y="90"/>
         </scene>
         <!--Bookmarks-->
         <scene sceneID="YqQ-b1-GMR">
@@ -253,7 +256,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cc9-cN-eZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5316" y="-227"/>
+            <point key="canvasLocation" x="5316" y="-269"/>
         </scene>
         <!--Repos-->
         <scene sceneID="T5f-4L-rlQ">
@@ -308,7 +311,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFN-s4-vJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5316" y="541.97901049475263"/>
+            <point key="canvasLocation" x="5316" y="493"/>
         </scene>
         <!--Collections-->
         <scene sceneID="kva-Jh-Euk">
@@ -392,7 +395,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CtH-YR-Dt5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4377" y="542"/>
+            <point key="canvasLocation" x="4374" y="494"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="W3P-iA-chk">
@@ -423,6 +426,6 @@
         <image name="github-logo" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zjV-uB-F61"/>
+        <segue reference="xWP-5B-82K"/>
     </inferredMetricsTieBreakers>
 </document>

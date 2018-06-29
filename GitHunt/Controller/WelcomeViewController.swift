@@ -8,6 +8,7 @@
 
 import UIKit
 import Moya
+import Firebase
 
 class WelcomeViewController: UIViewController {
 
@@ -17,6 +18,13 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if Auth.auth().currentUser != nil {
+            self.performSegue(withIdentifier: "stayLoggedIn", sender: self)
+        }
     }
 
     override func didReceiveMemoryWarning() {
