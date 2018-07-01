@@ -48,9 +48,7 @@ class BookmarkListViewController : UIViewController, UITableViewDelegate, UITabl
         cell.didClickRemoveBtn = { cell in
             let selectedRepo = self.bookmarkArray[indexPath.row]
             selectedRepo.isBookmarked = false
-
             Database.database().reference().child("bookmarks").child(self.bookmarkKeys[indexPath.row]).removeValue()
-            print(self.bookmarkKeys[indexPath.row])
             self.bookmarkArray.remove(at: indexPath.row)
             self.bookmarkKeys.remove(at: indexPath.row)
             self.bookmarkTableView.reloadData()
@@ -83,8 +81,9 @@ class BookmarkListViewController : UIViewController, UITableViewDelegate, UITabl
     //MARK: - Database
     
     func retrieveBookmarks() {
-        let messageDB = Database.database().reference().child("bookmarks")
-        messageDB.observe(.childAdded) { (snapshot) in
+        let bookmarkDB = Database.database().reference().child("bookmarks")
+        bookmarkDB.observe(.childAdded) { (snapshot) in
+            
             let snapshotValue = snapshot.value as! Dictionary<String,Any>
             let repoName = snapshotValue["name"]!
             let repoDescription = snapshotValue["description"]!
@@ -114,19 +113,6 @@ class BookmarkListViewController : UIViewController, UITableViewDelegate, UITabl
     }
     
     //MARK: - Helper Functions
-    
-    func formatStarsNumber(starNumber : Float) -> String {
-        
-        if starNumber >= 1000 {
-            let formattedStars = starNumber / 1000
-            return "\(String(NSString(format: "%.01f", formattedStars)))k"
-        }
-        else{
-            let formattedStars = Int(starNumber)
-            return String(formattedStars)
-        }
-        
-    }
     
     func convertUrlToImage(imageUrl : String) -> UIImage {
         

@@ -28,6 +28,7 @@
 		187A926C20E29AC500D673E7 /* RepoCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187A926A20E29AC500D673E7 /* RepoCustomCell.swift */; };
 		187A926E20E29DA100D673E7 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187A926D20E29DA100D673E7 /* Repo.swift */; };
 		189FC0CB20DD249A00572A37 /* RepoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189FC0CA20DD249A00572A37 /* RepoListViewController.swift */; };
+		18E95E7720E90F6A0067FF2C /* CollectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E95E7620E90F6A0067FF2C /* CollectionDetailViewController.swift */; };
 		8EF5D33945C5F741B23C10C3 /* Pods_GitHunt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FB4384C15B5EA7A1818A98F /* Pods_GitHunt.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		187A926D20E29DA100D673E7 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		189FC0CA20DD249A00572A37 /* RepoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewController.swift; sourceTree = "<group>"; };
 		189FC0CC20DD432400572A37 /* GitHunt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GitHunt.entitlements; sourceTree = "<group>"; };
+		18E95E7620E90F6A0067FF2C /* CollectionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailViewController.swift; sourceTree = "<group>"; };
 		2923B626644A8CE014A1FF38 /* Pods-GitHunt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHunt.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHunt/Pods-GitHunt.release.xcconfig"; sourceTree = "<group>"; };
 		4FB4384C15B5EA7A1818A98F /* Pods_GitHunt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHunt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B09F054E5691234539FF7A4D /* Pods-GitHunt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHunt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHunt/Pods-GitHunt.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				184AA23C20E4D975007276EE /* BookmarkListViewController.swift */,
 				186AA66920E63BAC0009C64E /* CollectionsViewController.swift */,
 				185BCC3E20E695C80039AE85 /* SelectCollectionViewController.swift */,
+				18E95E7620E90F6A0067FF2C /* CollectionDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				187A926E20E29DA100D673E7 /* Repo.swift in Sources */,
 				187A926C20E29AC500D673E7 /* RepoCustomCell.swift in Sources */,
 				187A926420E253E200D673E7 /* RepoService.swift in Sources */,
+				18E95E7720E90F6A0067FF2C /* CollectionDetailViewController.swift in Sources */,
 				186AA66A20E63BAC0009C64E /* CollectionsViewController.swift in Sources */,
 				185B71A720DCEB7200FEFF5A /* SignUpViewController.swift in Sources */,
 				185B71A520DCEB6200FEFF5A /* SignInViewController.swift in Sources */,

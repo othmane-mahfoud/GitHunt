@@ -371,6 +371,7 @@
                     <tabBarItem key="tabBarItem" title="Collections" image="folder" selectedImage="folder-2" id="NGl-vd-g36"/>
                     <connections>
                         <outlet property="collectionTableView" destination="zCK-6P-8ke" id="Une-CV-7ac"/>
+                        <segue destination="4PX-px-xEh" kind="show" identifier="showRepos" id="fql-nh-LvJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nYF-nS-fit" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -412,11 +413,59 @@
                     </view>
                     <connections>
                         <outlet property="selectCollectionTable" destination="2I6-3j-ohY" id="NTh-5g-L0a"/>
+                        <segue destination="BZS-MV-hij" kind="show" identifier="backToRepos" id="ItM-v5-uAu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAZ-W5-A7w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8441" y="493"/>
+            <point key="canvasLocation" x="8985" y="493"/>
+        </scene>
+        <!--Collection Detail View Controller-->
+        <scene sceneID="hX3-KN-duF">
+            <objects>
+                <viewController id="4PX-px-xEh" customClass="CollectionDetailViewController" customModule="GitHunt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pNK-dK-7aA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HKq-ce-Iml">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qPe-dQ-9Jb">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <items>
+                                            <navigationItem title="Title" id="uOa-eq-30c">
+                                                <barButtonItem key="leftBarButtonItem" title="Back" id="qN7-Nv-b4n">
+                                                    <connections>
+                                                        <segue destination="BZS-MV-hij" kind="show" identifier="backToRepos" id="UJd-CZ-1hp"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KSG-BG-Bjf">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HKq-ce-Iml" firstAttribute="top" secondItem="pNK-dK-7aA" secondAttribute="top" id="1s0-q3-vao"/>
+                            <constraint firstItem="HKq-ce-Iml" firstAttribute="trailing" secondItem="8e3-Qd-a8Z" secondAttribute="trailing" id="EmX-KK-qdG"/>
+                            <constraint firstItem="HKq-ce-Iml" firstAttribute="leading" secondItem="8e3-Qd-a8Z" secondAttribute="leading" id="KAB-Oz-nbl"/>
+                            <constraint firstItem="HKq-ce-Iml" firstAttribute="bottom" secondItem="8e3-Qd-a8Z" secondAttribute="bottom" id="NQQ-ns-ZBG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8e3-Qd-a8Z"/>
+                    </view>
+                    <connections>
+                        <outlet property="repoListTable" destination="KSG-BG-Bjf" id="Liv-Ab-Qf9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qNF-Er-F7z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8984.7999999999993" y="1424.4377811094455"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="e18-kg-q6n">
@@ -468,6 +517,7 @@
         <image name="github-logo" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xWP-5B-82K"/>
+        <segue reference="fql-nh-LvJ"/>
+        <segue reference="UJd-CZ-1hp"/>
     </inferredMetricsTieBreakers>
 </document>

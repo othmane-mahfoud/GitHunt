@@ -18,6 +18,7 @@ class RepoListViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var repoListTableView: UITableView!
     var bookmarkKeys : [String] = [String]()
+    var repoDictionary : Dictionary<String, Any> = [:]
     
     let provider = MoyaProvider<RepoService>()
     
@@ -82,25 +83,17 @@ class RepoListViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         cell.didClickPlusBtn = { cell in
+
+            let selectedRepo : Repo = self.allRepos[indexPath.row]
+            self.repoDictionary = ["user": Auth.auth().currentUser?.email as Any,
+                                  "name": selectedRepo.repoName,
+                                  "description": selectedRepo.repoDescription,
+                                  "owner": selectedRepo.repoOwner,
+                                  "stars": selectedRepo.repoStars as Float,
+                                  "avatar": selectedRepo.repoOwnerAvatar,
+                                  "url": selectedRepo.repoURL]
             self.performSegue(withIdentifier: "selectCollection", sender: self)
-//            let reposDB = Database.database().reference().child("collections").child("repos")
-//            let selectedRepo : Repo = self.allRepos[indexPath.row]
-//            let repoDictionary = ["user": Auth.auth().currentUser?.email as Any,
-//                                  "name": selectedRepo.repoName,
-//                                  "description": selectedRepo.repoDescription,
-//                                  "owner": selectedRepo.repoOwner,
-//                                  "stars": selectedRepo.repoStars as Float,
-//                                  "avatar": selectedRepo.repoOwnerAvatar,
-//                                  "url": selectedRepo.repoURL]
-//            reposDB.childByAutoId().setValue(repoDictionary) {
-//                (error, reference) in
-//                if error != nil {
-//                    print(error!)
-//                }
-//                else {
-//                    print("repo saved successfully")
-//                }
-//            }
+
         }
         
         return cell
@@ -125,6 +118,13 @@ class RepoListViewController: UIViewController, UITableViewDelegate, UITableView
         repoListTableView.rowHeight = UITableViewAutomaticDimension
         repoListTableView.estimatedRowHeight = 120.0
         
+    }
+    
+    //Passing data with segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let selectCollectionViewController = segue.destination as! SelectCollectionViewController
+        selectCollectionViewController.repoToAdd = repoDictionary
     }
     
     //MARK: - Networking

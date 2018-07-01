@@ -12,7 +12,8 @@ import Firebase
 class CollectionsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var collectionTableView: UITableView!
-    
+    var selectedCollection : String = ""
+    var collectionKeys : [String] = [String]()
     var collectionArray : [Collection] = [Collection]()
     
     override func viewDidLoad() {
@@ -41,11 +42,13 @@ class CollectionsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return collectionArray.count
-        
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedCollection = collectionKeys[indexPath.row]
+        performSegue(withIdentifier: "showRepos", sender: self)
+    }
     
     //Configure the Table View cells to have an optimal height
     
@@ -54,6 +57,13 @@ class CollectionsViewController: UIViewController, UITableViewDelegate, UITableV
         collectionTableView.rowHeight = UITableViewAutomaticDimension
         collectionTableView.estimatedRowHeight = 60.0
         
+    }
+    
+    //Passing data with segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let collectionDetailsViewController = segue.destination as! CollectionDetailViewController
+        collectionDetailsViewController.selectedCollectionKey = selectedCollection
     }
     
     //MARK: - Log Out
@@ -124,6 +134,8 @@ class CollectionsViewController: UIViewController, UITableViewDelegate, UITableV
             let newCollection = Collection()
             newCollection.collectionName = collectionName as! String
             self.collectionArray.append(newCollection)
+            let key = snapshot.key
+            self.collectionKeys.append(key)
             self.configureTableView()
             self.collectionTableView.reloadData()
         }

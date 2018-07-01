@@ -13,6 +13,8 @@ class SelectCollectionViewController: UIViewController, UITableViewDelegate, UIT
 
     @IBOutlet weak var selectCollectionTable: UITableView!
     var collectionArray : [Collection] = [Collection]()
+    var collectionKeys : [String] = [String]()
+    var repoToAdd : Dictionary <String, Any> = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +49,17 @@ class SelectCollectionViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let reposDB = Database.database().reference().child("collections").child(collectionKeys[indexPath.row]).child("repos")
+        reposDB.childByAutoId().setValue(repoToAdd) {
+            (error, reference) in
+            if error != nil {
+                print(error!)
+            }
+            else {
+                print("repo saved successfully")
+            }
+        }
+        performSegue(withIdentifier: "backToRepos", sender: self)
     }
     
     //Configure the Table View cells to have an optimal height
@@ -69,6 +81,8 @@ class SelectCollectionViewController: UIViewController, UITableViewDelegate, UIT
             let newCollection = Collection()
             newCollection.collectionName = collectionName as! String
             self.collectionArray.append(newCollection)
+            let key = snapshot.key
+            self.collectionKeys.append(key)
             self.configureTableView()
             self.selectCollectionTable.reloadData()
         }
