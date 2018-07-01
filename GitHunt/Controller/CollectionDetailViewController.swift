@@ -40,10 +40,19 @@ class CollectionDetailViewController: UIViewController, UITableViewDelegate, UIT
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "bookmarkCell", for: indexPath) as! BookmarksCustomCell
         
+        cell.addButton.isHidden = true
         cell.repoNameLabel.text = repoArray[indexPath.row].repoName
         cell.repoDescriptionLabel.text = repoArray[indexPath.row].repoDescription
         cell.repoOwnerLabel.text = repoArray[indexPath.row].repoOwner
         cell.repoOwnerAvatar.image = convertUrlToImage(imageUrl: repoArray[indexPath.row].repoOwnerAvatar)
+        
+        cell.didClickRemoveBtn = { cell in
+            let selectedRepo = self.repoArray[indexPath.row]
+        Database.database().reference().child("collections").child(self.selectedCollectionKey).child("repos").child(self.repoKeys[indexPath.row]).removeValue()
+            self.repoArray.remove(at: indexPath.row)
+            self.repoKeys.remove(at: indexPath.row)
+            self.repoListTable.reloadData()
+        }
         
         return cell
         
@@ -83,6 +92,8 @@ class CollectionDetailViewController: UIViewController, UITableViewDelegate, UIT
             let repoURL = snapshotValue["url"]
             let repo = Repo(name: repoName as! String, description: repoDescription as! String, owner: repoOwner! as! String, ownerAvatar: ownerAvatar! as! String, stars: repoStars as! Float , url: repoURL! as! String)
             self.repoArray.append(repo)
+            let key = snapshot.key
+            self.repoKeys.append(key)
             self.configureTableView()
             self.repoListTable.reloadData()
         }

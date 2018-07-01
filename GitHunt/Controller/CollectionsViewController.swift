@@ -41,6 +41,13 @@ class CollectionsViewController: UIViewController, UITableViewDelegate, UITableV
         
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    Database.database().reference().child("collections").child(collectionKeys[indexPath.row]).removeValue()
+        self.collectionArray.remove(at: indexPath.row)
+        self.collectionKeys.remove(at: indexPath.row)
+        self.collectionTableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return collectionArray.count
     }
