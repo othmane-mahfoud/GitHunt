@@ -47,7 +47,6 @@ class CollectionDetailViewController: UIViewController, UITableViewDelegate, UIT
         cell.repoOwnerAvatar.image = convertUrlToImage(imageUrl: repoArray[indexPath.row].repoOwnerAvatar)
         
         cell.didClickRemoveBtn = { cell in
-            let selectedRepo = self.repoArray[indexPath.row]
         Database.database().reference().child("collections").child(self.selectedCollectionKey).child("repos").child(self.repoKeys[indexPath.row]).removeValue()
             self.repoArray.remove(at: indexPath.row)
             self.repoKeys.remove(at: indexPath.row)

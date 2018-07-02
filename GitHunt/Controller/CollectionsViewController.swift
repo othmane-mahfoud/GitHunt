@@ -80,6 +80,11 @@ class CollectionsViewController: UIViewController, UITableViewDelegate, UITableV
         do{
             try Auth.auth().signOut()
             navigationController?.popToRootViewController(animated: true)
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let authScreen = storyBoard.instantiateViewController(withIdentifier: "Start")
+            UIApplication.shared.keyWindow?.rootViewController = authScreen
+            UIApplication.shared.keyWindow?.makeKeyAndVisible()
+            navigationController?.popToRootViewController(animated: true)
         }
         catch {
             print("There was an error signing out")
