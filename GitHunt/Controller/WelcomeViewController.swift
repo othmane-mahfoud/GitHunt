@@ -7,12 +7,24 @@
 //
 
 import UIKit
+import Moya
+import Firebase
 
 class WelcomeViewController: UIViewController {
 
+    let provider = MoyaProvider<RepoService>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        if Auth.auth().currentUser != nil {
+//            self.performSegue(withIdentifier: "stayLoggedIn", sender: self)
+//        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +32,17 @@ class WelcomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    //MARK : - Helper functions
+    
+    func getCurrentDate() -> String {
+        
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let formattedDate = formatter.string(from: date)
+        return "created:>" + formattedDate
+        
+    }
 
 }
 

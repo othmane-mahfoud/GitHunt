@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1826091820EB930300409DDE /* OAuth2RetryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826091720EB930300409DDE /* OAuth2RetryHandler.swift */; };
+		184AA23D20E4D975007276EE /* BookmarkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184AA23C20E4D975007276EE /* BookmarkListViewController.swift */; };
+		184AA24020E4E8AD007276EE /* BookmarksCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184AA23E20E4E8AD007276EE /* BookmarksCustomCell.swift */; };
+		184AA24120E4E8AD007276EE /* BookmarksCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184AA23F20E4E8AD007276EE /* BookmarksCustomCell.xib */; };
 		185B719120DC4C8300FEFF5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B719020DC4C8300FEFF5A /* AppDelegate.swift */; };
 		185B719320DC4C8300FEFF5A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B719220DC4C8300FEFF5A /* WelcomeViewController.swift */; };
 		185B719620DC4C8300FEFF5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185B719420DC4C8300FEFF5A /* Main.storyboard */; };
@@ -15,11 +19,25 @@
 		185B71A520DCEB6200FEFF5A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B71A420DCEB6200FEFF5A /* SignInViewController.swift */; };
 		185B71A720DCEB7200FEFF5A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185B71A620DCEB7200FEFF5A /* SignUpViewController.swift */; };
 		185B71AD20DD026500FEFF5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 185B71AC20DD026500FEFF5A /* GoogleService-Info.plist */; };
+		185BCC3F20E695C80039AE85 /* SelectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185BCC3E20E695C80039AE85 /* SelectCollectionViewController.swift */; };
+		186AA66A20E63BAC0009C64E /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186AA66920E63BAC0009C64E /* CollectionsViewController.swift */; };
+		186AA66E20E63DB10009C64E /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186AA66D20E63DB10009C64E /* Collection.swift */; };
+		186AA67120E64DE50009C64E /* CollectionCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186AA66F20E64DE50009C64E /* CollectionCustomCell.swift */; };
+		186AA67220E64DE50009C64E /* CollectionCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186AA67020E64DE50009C64E /* CollectionCustomCell.xib */; };
+		187A926420E253E200D673E7 /* RepoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187A926320E253E200D673E7 /* RepoService.swift */; };
+		187A926B20E29AC500D673E7 /* RepoCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187A926920E29AC500D673E7 /* RepoCustomCell.xib */; };
+		187A926C20E29AC500D673E7 /* RepoCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187A926A20E29AC500D673E7 /* RepoCustomCell.swift */; };
+		187A926E20E29DA100D673E7 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187A926D20E29DA100D673E7 /* Repo.swift */; };
 		189FC0CB20DD249A00572A37 /* RepoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189FC0CA20DD249A00572A37 /* RepoListViewController.swift */; };
+		18E95E7720E90F6A0067FF2C /* CollectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E95E7620E90F6A0067FF2C /* CollectionDetailViewController.swift */; };
 		8EF5D33945C5F741B23C10C3 /* Pods_GitHunt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FB4384C15B5EA7A1818A98F /* Pods_GitHunt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1826091720EB930300409DDE /* OAuth2RetryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2RetryHandler.swift; sourceTree = "<group>"; };
+		184AA23C20E4D975007276EE /* BookmarkListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkListViewController.swift; sourceTree = "<group>"; };
+		184AA23E20E4E8AD007276EE /* BookmarksCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksCustomCell.swift; sourceTree = "<group>"; };
+		184AA23F20E4E8AD007276EE /* BookmarksCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookmarksCustomCell.xib; sourceTree = "<group>"; };
 		185B718D20DC4C8300FEFF5A /* GitHunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		185B719020DC4C8300FEFF5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		185B719220DC4C8300FEFF5A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -30,8 +48,18 @@
 		185B71A420DCEB6200FEFF5A /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		185B71A620DCEB7200FEFF5A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		185B71AC20DD026500FEFF5A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		185BCC3E20E695C80039AE85 /* SelectCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollectionViewController.swift; sourceTree = "<group>"; };
+		186AA66920E63BAC0009C64E /* CollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
+		186AA66D20E63DB10009C64E /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		186AA66F20E64DE50009C64E /* CollectionCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCustomCell.swift; sourceTree = "<group>"; };
+		186AA67020E64DE50009C64E /* CollectionCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionCustomCell.xib; sourceTree = "<group>"; };
+		187A926320E253E200D673E7 /* RepoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoService.swift; sourceTree = "<group>"; };
+		187A926920E29AC500D673E7 /* RepoCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepoCustomCell.xib; sourceTree = "<group>"; };
+		187A926A20E29AC500D673E7 /* RepoCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoCustomCell.swift; sourceTree = "<group>"; };
+		187A926D20E29DA100D673E7 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		189FC0CA20DD249A00572A37 /* RepoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewController.swift; sourceTree = "<group>"; };
 		189FC0CC20DD432400572A37 /* GitHunt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GitHunt.entitlements; sourceTree = "<group>"; };
+		18E95E7620E90F6A0067FF2C /* CollectionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailViewController.swift; sourceTree = "<group>"; };
 		2923B626644A8CE014A1FF38 /* Pods-GitHunt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHunt.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHunt/Pods-GitHunt.release.xcconfig"; sourceTree = "<group>"; };
 		4FB4384C15B5EA7A1818A98F /* Pods_GitHunt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHunt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B09F054E5691234539FF7A4D /* Pods-GitHunt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHunt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHunt/Pods-GitHunt.debug.xcconfig"; sourceTree = "<group>"; };
@@ -83,6 +111,9 @@
 		185B71A820DCEBAD00FEFF5A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				187A926320E253E200D673E7 /* RepoService.swift */,
+				187A926D20E29DA100D673E7 /* Repo.swift */,
+				186AA66D20E63DB10009C64E /* Collection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -90,6 +121,7 @@
 		185B71A920DCEBB300FEFF5A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				187A926720E298EF00D673E7 /* Custom UI */,
 				185B719920DC4C8500FEFF5A /* LaunchScreen.storyboard */,
 				185B719420DC4C8300FEFF5A /* Main.storyboard */,
 			);
@@ -104,6 +136,11 @@
 				185B71A420DCEB6200FEFF5A /* SignInViewController.swift */,
 				185B71A620DCEB7200FEFF5A /* SignUpViewController.swift */,
 				189FC0CA20DD249A00572A37 /* RepoListViewController.swift */,
+				184AA23C20E4D975007276EE /* BookmarkListViewController.swift */,
+				186AA66920E63BAC0009C64E /* CollectionsViewController.swift */,
+				185BCC3E20E695C80039AE85 /* SelectCollectionViewController.swift */,
+				18E95E7620E90F6A0067FF2C /* CollectionDetailViewController.swift */,
+				1826091720EB930300409DDE /* OAuth2RetryHandler.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -115,6 +152,27 @@
 				185B71AC20DD026500FEFF5A /* GoogleService-Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		187A926720E298EF00D673E7 /* Custom UI */ = {
+			isa = PBXGroup;
+			children = (
+				187A926820E2990C00D673E7 /* Custom Cell */,
+			);
+			path = "Custom UI";
+			sourceTree = "<group>";
+		};
+		187A926820E2990C00D673E7 /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				187A926A20E29AC500D673E7 /* RepoCustomCell.swift */,
+				187A926920E29AC500D673E7 /* RepoCustomCell.xib */,
+				184AA23E20E4E8AD007276EE /* BookmarksCustomCell.swift */,
+				184AA23F20E4E8AD007276EE /* BookmarksCustomCell.xib */,
+				186AA66F20E64DE50009C64E /* CollectionCustomCell.swift */,
+				186AA67020E64DE50009C64E /* CollectionCustomCell.xib */,
+			);
+			path = "Custom Cell";
 			sourceTree = "<group>";
 		};
 		9F55253B5F37EB8577ACBD05 /* Frameworks */ = {
@@ -199,9 +257,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				184AA24120E4E8AD007276EE /* BookmarksCustomCell.xib in Resources */,
 				185B719B20DC4C8500FEFF5A /* LaunchScreen.storyboard in Resources */,
 				185B71AD20DD026500FEFF5A /* GoogleService-Info.plist in Resources */,
+				187A926B20E29AC500D673E7 /* RepoCustomCell.xib in Resources */,
 				185B719820DC4C8500FEFF5A /* Assets.xcassets in Resources */,
+				186AA67220E64DE50009C64E /* CollectionCustomCell.xib in Resources */,
 				185B719620DC4C8300FEFF5A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,19 +277,27 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GitHunt/Pods-GitHunt-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -262,9 +331,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185BCC3F20E695C80039AE85 /* SelectCollectionViewController.swift in Sources */,
+				184AA24020E4E8AD007276EE /* BookmarksCustomCell.swift in Sources */,
 				185B719320DC4C8300FEFF5A /* WelcomeViewController.swift in Sources */,
 				185B719120DC4C8300FEFF5A /* AppDelegate.swift in Sources */,
+				186AA66E20E63DB10009C64E /* Collection.swift in Sources */,
+				186AA67120E64DE50009C64E /* CollectionCustomCell.swift in Sources */,
 				189FC0CB20DD249A00572A37 /* RepoListViewController.swift in Sources */,
+				184AA23D20E4D975007276EE /* BookmarkListViewController.swift in Sources */,
+				187A926E20E29DA100D673E7 /* Repo.swift in Sources */,
+				187A926C20E29AC500D673E7 /* RepoCustomCell.swift in Sources */,
+				1826091820EB930300409DDE /* OAuth2RetryHandler.swift in Sources */,
+				187A926420E253E200D673E7 /* RepoService.swift in Sources */,
+				18E95E7720E90F6A0067FF2C /* CollectionDetailViewController.swift in Sources */,
+				186AA66A20E63BAC0009C64E /* CollectionsViewController.swift in Sources */,
 				185B71A720DCEB7200FEFF5A /* SignUpViewController.swift in Sources */,
 				185B71A520DCEB6200FEFF5A /* SignInViewController.swift in Sources */,
 			);

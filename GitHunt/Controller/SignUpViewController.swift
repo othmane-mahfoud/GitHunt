@@ -17,6 +17,7 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -27,7 +28,13 @@ class SignUpViewController: UIViewController {
     @IBAction func signUpPressed(_ sender: Any) {
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if error != nil {
-                print(error!)
+                let alert = UIAlertController(title: "Sign Up Error", message: "We're sorry, there was an error registrating you to the app. Make sure you enter a valid email and a password of 6 characters minimum then try a again.", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Try again", style: .default, handler: { (UIAlertAction) in
+                    self.emailTextField.text = ""
+                    self.passwordTextField.text = ""
+                })
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
             }
             else {
                 self.performSegue(withIdentifier: "goToRepoList", sender: self)
