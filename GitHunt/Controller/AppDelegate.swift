@@ -31,8 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         if "ppoauthapp" == url.scheme || (url.scheme?.hasPrefix("com.googleusercontent.apps"))! {
-            if let vc = window?.rootViewController as? SignInViewController {
-                vc.oauth2.handleRedirectURL(url)
+            if let nvc = window?.rootViewController as? UINavigationController {
+                let vc = nvc.topViewController as? SignInViewController
+                vc?.oauth2.handleRedirectURL(url)
                 return true
             }
         }

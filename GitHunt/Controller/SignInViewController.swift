@@ -91,8 +91,8 @@ class SignInViewController: UIViewController {
     
     func didGetUserdata(dict: [String: Any], loader: OAuth2DataLoader?) {
         DispatchQueue.main.async {
-            if let username = dict["name"] as? String {
-                print(username)
+            if (dict["name"] as? String) != nil {
+                self.performSegue(withIdentifier: "goToRepoList", sender: self)
             }
             else{
                 print("here")
