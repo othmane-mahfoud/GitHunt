@@ -92,10 +92,17 @@ class SignInViewController: UIViewController {
     func didGetUserdata(dict: [String: Any], loader: OAuth2DataLoader?) {
         DispatchQueue.main.async {
             if (dict["name"] as? String) != nil {
-                self.performSegue(withIdentifier: "goToRepoList", sender: self)
+                let credential = GitHubAuthProvider.credential(withToken: self.oauth2.accessToken!)
+                Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+                    if error != nil {
+                        print(error!)
+                        return
+                    }
+                    self.performSegue(withIdentifier: "goToRepoList", sender: self)
+                }
             }
             else{
-                print("here")
+                print("could not get data")
             }
         }
     }
